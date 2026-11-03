@@ -9,8 +9,8 @@ import org.wpilib.epilogue.Epilogue;
 import org.wpilib.epilogue.Logged;
 import org.wpilib.framework.OpModeRobot;
 
-import first.mechanisms.Roller;
-import first.mechanisms.Shooter;
+import first.robot.mechanisms.Roller;
+import first.robot.mechanisms.Shooter;
 
 @Logged
 public class Robot extends OpModeRobot {

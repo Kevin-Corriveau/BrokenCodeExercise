@@ -2,14 +2,14 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
-package first.mechanisms;
+package first.robot.mechanisms;
 
 import static org.wpilib.units.Units.Rotations;
 import static org.wpilib.units.Units.RotationsPerSecond;
 
 import org.wpilib.command3.Command;
 
-import first.constants.ShooterConstants;
+import first.robot.constants.ShooterConstants;
 
 public class Shooter {
 

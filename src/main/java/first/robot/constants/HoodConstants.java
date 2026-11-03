@@ -17,7 +17,7 @@ public class HoodConstants {
     public static final int motorId = -1;
     public static final int encoderId = 43;
 
-    public static final double sensorToMechanism = 1 / 2;
+    public static final double sensorToMechanism = 1_0.0 / 2.0d;
     public static final double rotorToSensor = 3 / 4;
 
     public static final Angle min = Degrees.of(0);

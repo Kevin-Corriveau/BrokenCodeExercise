@@ -10,7 +10,7 @@ import org.wpilib.opmode.Teleop;
 
 import first.robot.mechanisms.Flywheel;
 
-@Teleop(textColor = "#833636")
+@Teleop(textColor = "#d8aaaa", backgroundColor = "#d8aaaa")
 public class TeleopOp extends PeriodicOpMode {
 
     private final Robot robot;

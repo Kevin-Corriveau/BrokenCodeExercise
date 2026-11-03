@@ -80,7 +80,7 @@ public class Flywheel implements Mechanism {
         return runRepeatedly(() -> setVelocity(velocity.get())).named(getName() + "Shoot");
     }
 
-    public Command rest() {
+    public Command prepare() {
         return run(coroutine -> setVelocity(FlywheelConstants.restVelocity)).named(getName() + "Rest");
     }
 

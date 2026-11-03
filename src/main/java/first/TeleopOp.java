@@ -29,6 +29,8 @@ public class TeleopOp extends PeriodicOpMode {
         copilot.rightTrigger().onTrue(robot.shooter.shoot());
         copilot.leftTrigger().and(copilot.leftTrigger().negate()).whileTrue(flywheel.prepare());
 
+        copilot.a().onTrue(robot.roller.roll()).onFalse(robot.roller.stopCmd());
+        copilot.b().onTrue(robot.roller.vomit()).onFalse(robot.roller.stopCmd());
         
     }
 

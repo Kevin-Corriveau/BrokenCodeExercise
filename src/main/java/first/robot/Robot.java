@@ -9,12 +9,14 @@ import org.wpilib.epilogue.Epilogue;
 import org.wpilib.epilogue.Logged;
 import org.wpilib.framework.OpModeRobot;
 
+import first.mechanisms.Roller;
 import first.mechanisms.Shooter;
 
 @Logged
 public class Robot extends OpModeRobot {
   
   public final Shooter shooter = new Shooter();
+  public final Roller roller = new Roller();
 
   public Robot() {}
 

@@ -14,7 +14,9 @@ import org.wpilib.units.measure.Angle;
 
 import com.ctre.phoenix6.configs.TalonFXConfiguration;
 import com.ctre.phoenix6.controls.PositionVoltage;
+import com.ctre.phoenix6.hardware.CANcoder;
 import com.ctre.phoenix6.hardware.TalonFX;
+import com.ctre.phoenix6.signals.FeedbackSensorSourceValue;
 import com.ctre.phoenix6.signals.InvertedValue;
 import com.ctre.phoenix6.signals.NeutralModeValue;
 
@@ -23,6 +25,7 @@ import first.constants.HoodConstants;
 public class Hood implements Mechanism {
 
     private final TalonFX motor = new TalonFX(HoodConstants.motorId, HoodConstants.network);
+    private final CANcoder encoder = new CANcoder(HoodConstants.encoderId, HoodConstants.network);
 
     private final PositionVoltage positionControl = new PositionVoltage(0);
 
@@ -32,7 +35,11 @@ public class Hood implements Mechanism {
         config.MotorOutput.Inverted = InvertedValue.CounterClockwise_Positive;
         config.MotorOutput.NeutralMode = NeutralModeValue.Brake;
 
-        config.Feedback.SensorToMechanismRatio = HoodConstants.ratio;
+        config.Feedback.SensorToMechanismRatio = HoodConstants.sensorToMechanism;
+        config.Feedback.RotorToSensorRatio = HoodConstants.rotorToSensor;
+
+        config.Feedback.FeedbackRemoteSensorID = encoder.getDeviceID();
+        config.Feedback.FeedbackSensorSource = FeedbackSensorSourceValue.FusedCANcoder;
 
         motor.setPosition(HoodConstants.min);
 

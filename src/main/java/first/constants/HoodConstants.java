@@ -15,8 +15,10 @@ public class HoodConstants {
     public static final CANBus network = new CANBus();
 
     public static final int motorId = -1;
+    public static final int encoderId = 43;
 
-    public static final double ratio = 1 / 2;
+    public static final double sensorToMechanism = 1 / 2;
+    public static final double rotorToSensor = 3 / 4;
 
     public static final Angle min = Degrees.of(0);
     public static final Angle max = Degrees.of(90);

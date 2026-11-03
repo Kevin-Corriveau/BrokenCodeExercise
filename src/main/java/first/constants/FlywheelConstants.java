@@ -28,4 +28,6 @@ public class FlywheelConstants {
 
     public static final AngularVelocity restVelocity = RotationsPerSecond.of(15);
 
+    public static final AngularVelocity tolerance = RotationsPerSecond.of(3);
+
 }

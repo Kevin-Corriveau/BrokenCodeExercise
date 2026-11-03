@@ -11,6 +11,7 @@ import org.wpilib.framework.OpModeRobot;
 
 @Logged
 public class Robot extends OpModeRobot {
+  
   public Robot() {}
 
   @Override
@@ -18,4 +19,5 @@ public class Robot extends OpModeRobot {
     Scheduler.getDefault().run();
     Epilogue.update(this);
   }
+  
 }

@@ -4,6 +4,8 @@
 
 package first.mechanisms;
 
+import static org.wpilib.units.Units.RotationsPerSecond;
+
 import java.util.function.Supplier;
 
 import org.wpilib.command3.Command;
@@ -49,6 +51,14 @@ public class Flywheel implements Mechanism {
         follower1.setControl(new Follower(master.getDeviceID(), MotorAlignmentValue.Opposed));
 
         setDefaultCommand(stopCmd());
+    }
+
+    public AngularVelocity getSetpoint() {
+        return RotationsPerSecond.of(velocityControl.Velocity);
+    }
+
+    public boolean isAtSetpoint() {
+        return getSetpoint().minus(master.getVelocity().getValue()).abs(RotationsPerSecond) < FlywheelConstants.tolerance.in(RotationsPerSecond);
     }
 
     public void stop() {

@@ -40,6 +40,7 @@ public class Flywheel implements Mechanism {
         config.Slot0 = FlywheelConstants.pidConfig;
 
         config.CurrentLimits.SupplyCurrentLimit = 40;
+        config.CurrentLimits.StatorCurrentLimitEnable = false;
 
         master.getConfigurator().apply(config);
         follower1.getConfigurator().apply(config);
